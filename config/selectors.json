@@ -1,0 +1,41 @@
+{
+  "_comment": "Amazon regularly changes its HTML. If parsing starts returning empty fields, check/update these selectors first.",
+
+  "search_page": {
+    "result_card": "div[data-component-type='s-search-result']",
+    "title": "h2",
+    "link_from_title_parent_a": true,
+    "price_offscreen": ".a-price .a-offscreen",
+    "rating_alt_text": ".a-icon-alt",
+    "review_count": "a[href*='#customerReviews'] span",
+    "next_page_link": "a.s-pagination-next"
+  },
+
+  "product_page": {
+    "title": "#productTitle",
+    "price_container_candidates": [
+      "#corePriceDisplay_desktop_feature_div",
+      "#corePrice_feature_div",
+      "#buybox"
+    ],
+    "price_offscreen": ".a-price .a-offscreen",
+    "price_accessibility_label": "#apex-pricetopay-accessibility-label",
+    "price_whole": ".a-price-whole",
+    "price_fraction": ".a-price-fraction",
+    "price_symbol": ".a-price-symbol",
+    "rating_alt_text": "i[data-hook='average-star-rating'] span",
+    "review_count": "span#acrCustomerReviewText",
+    "availability": "#availability span",
+    "out_of_stock_container": "#outOfStock",
+    "shipping_restricted_marker": "cannot be shipped to your selected delivery location"
+  },
+
+  "block_signals": {
+    "captcha_text_markers": [
+      "Enter the characters you see below",
+      "Type the characters you see in this image",
+      "/errors/validateCaptcha"
+    ],
+    "block_status_codes": [503, 429]
+  }
+}

@@ -1,0 +1,11 @@
+# Python
+__pycache__/
+*.pyc
+
+# Scraper output and logs (generated data, not source)
+output/*.csv
+logs/*.log
+
+# Keep the folders in git but ignore their generated contents
+!output/.gitkeep
+!logs/.gitkeep
