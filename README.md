@@ -1,4 +1,34 @@
-# Amazon Scraper
+# Amazon Product Scraper
+
+A Python command-line tool that collects Amazon search results by category or keyword and saves them to CSV. It is built to run unattended and to stop politely: progress is never lost, re-runs skip what is already collected, and the scraper backs off instead of fighting anti-bot protection.
+
+## Features
+
+- **43 ready-made categories** (`config/categories.json`) or any custom keyword
+- **Interactive or scripted runs:** pick a category from a menu, or pass `--category` / `--keyword` and `--n`
+- **Incremental CSV output:** every product is written as soon as it is parsed, so Ctrl+C never loses data
+- **Resume and dedup:** re-running the same category on the same day skips ASINs already collected
+- **Polite by design:** random delays, retries with backoff, one request at a time, rotating User-Agent
+- **Stops on block signals:** CAPTCHA pages, 429/503 responses or repeated unrecognized pages end the run cleanly
+- **Config, not code:** CSS selectors, delays and limits live in JSON files, so markup changes need no code edits
+
+## Output
+
+`output/products_{date}.csv` with the columns:
+
+| Column | Example |
+| --- | --- |
+| title | Wireless Earbuds, Bluetooth 5.3 Headphones… |
+| price | 24.99 |
+| rating | 4.4 |
+| review_count | 12873 |
+| asin | B0XXXXXXXX |
+| url | https://www.amazon.com/dp/B0XXXXXXXX |
+
+## Tech
+
+Python 3.10+ · requests · BeautifulSoup4 · csv · argparse
+
 
 ## Install
 ```
