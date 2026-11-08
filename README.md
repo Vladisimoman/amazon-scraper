@@ -32,7 +32,8 @@ Python 3.10+ · requests · BeautifulSoup4 · csv · argparse
 
 ## Install
 ```
-cd amazon_scraper
+git clone https://github.com/Vladisimoman/amazon-scraper.git
+cd amazon-scraper
 pip install -r requirements.txt
 ```
 Requires Python 3.10+ (uses `X | None` type hints).
